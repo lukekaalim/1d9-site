@@ -3,7 +3,7 @@
   src: url('./roboto-font.ttf');
 }
 
-.hello {
+.helloHeading {
   color: green;
   font-family: 'MyFont';
   background-image: url('./icon.png');

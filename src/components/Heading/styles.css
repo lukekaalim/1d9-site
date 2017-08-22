@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('../../assets/roboto-font.ttf');
+}
+
+.heading {
+    font-family: 'MyFont';
+    text-align: center;
+}

@@ -4,57 +4,30 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: {
-    app: './src/index.js',
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  },
+  entry: './src/index.tsx',
   output: {
-    filename: '[name].bundle.js',
+    filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  devServer: { 
+    contentBase: './dist',
+  }, 
+  devtool: 'source-map',
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json']
+  },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPulgin({
-      title: 'Output Management'
-    }),
-    new webpack.HotModuleReplacementPlugin()
+      template: 'src/index.ejs'
+    }), 
   ],
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader'
-        ]
-      },
-      {
-        test: /\.xml$/,
-        use: [
-          'xml-loader'
-        ]
-      }
+      { test: /\.tsx$/, loader: 'awesome-typescript-loader' },
+      { enforce: "pre", test: /\.js$/, loader: 'source-map-loader' },
+      { test: /\.css$/,  use: ['style-loader', 'css-loader'] },
+      { test: /\.(woff|woff2|eot|ttf|otf)$/, use: ['file-loader'] }, 
+      { test: /\.(png|svg|jpg|gif)$/, use: ['file-loader'] }, 
     ]
-  }
+  },
 };
