@@ -11,7 +11,7 @@ const formatDate = (target: Date): string =>
 
 const SessionCountdown = ({ targetDate }: SessionCountdownProps) =>
 <div className="sessionCountdown">
-    Event in {getDaysUntilTarget(targetDate)} days, @ <strong><time>{formatDate(targetDate)}</time></strong>
+    Event in {getDaysUntilTarget(targetDate)} days, @ <strong><time dateTime={targetDate.toISOString()}>{formatDate(targetDate)}</time></strong>
 </div>;
 
 export default SessionCountdown;
