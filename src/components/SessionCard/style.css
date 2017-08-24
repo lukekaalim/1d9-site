@@ -1,0 +1,16 @@
+.card {
+    border: 1px grey solid;
+    padding: 35px;
+    box-shadow: 0px 3px 5px 2px #dadada;
+    border-radius: 5px;
+}
+.sessionCard {
+    font-family: 'roboto';
+    min-width: 250px;
+}
+.sessionHeading {
+    margin: 0;
+}
+.bottomBorder {
+    border-style: dashed;
+}

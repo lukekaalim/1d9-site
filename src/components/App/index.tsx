@@ -1,13 +1,19 @@
 import * as React from 'react';
 import Heading from '../Heading';
 import CenteringContainer from '../CenteringContainer';
-import CountdownCard from '../CountdownCard';
+import SessionCard from '../SessionCard';
 
 const App = () =>
 <div>
     <Heading />
     <CenteringContainer>
-        <CountdownCard targetDate={new Date(2017, 7, 29)} />
+        <SessionCard
+            date={new Date(2017, 7, 29)}
+            name="Dungeons and Dragons, Season 2"
+            shortDesc="Game run by Luke next Tuesday in Rome"
+            foodStatus="Contact #pen-and-paper for pizza choices/requests"
+            color="rgb(137, 216, 245)"
+            />
     </CenteringContainer>
 </div>;
 
