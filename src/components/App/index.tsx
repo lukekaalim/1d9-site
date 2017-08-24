@@ -12,7 +12,7 @@ const App = () =>
             name="Dungeons and Dragons, Season 2"
             shortDesc="Game run by Luke next Tuesday in Rome"
             foodStatus="Contact #pen-and-paper for pizza choices/requests"
-            color="rgb(137, 216, 245)"
+            color="rgb(193, 253, 215)"
             />
     </CenteringContainer>
 </div>;

@@ -18,7 +18,7 @@ const CenteringContainer = ({
     color,
     foodStatus,
 }: SessionCardProps) =>
-<div className="card sessionCard" style={{'background-color': color}}>
+<div className="card sessionCard" style={{'backgroundColor': color}}>
     <h2 className="sessionHeading">{name}</h2>
     <p>{shortDesc}</p>
     <p>{foodStatus}</p>
