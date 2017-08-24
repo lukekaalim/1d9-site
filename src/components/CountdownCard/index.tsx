@@ -11,7 +11,7 @@ const formatDate = (target: Date): string =>
 
 const CenteringContainer = ({ targetDate }: countdownCardProps) =>
 <div className="countdownCard">
-    {getDaysUntilTarget(targetDate)} days until next session, @ {formatDate(targetDate)}
+    {getDaysUntilTarget(targetDate)} days until next session, @ <time>{formatDate(targetDate)}</time>
 </div>;
 
 export default CenteringContainer;
