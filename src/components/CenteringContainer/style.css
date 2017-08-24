@@ -7,4 +7,5 @@
     justify-content: center;
     right: 0;
     bottom: 0;
+    pointer-events: none;
 }
