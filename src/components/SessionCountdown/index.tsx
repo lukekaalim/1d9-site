@@ -11,7 +11,12 @@ const formatDate = (target: Date): string =>
 
 const SessionCountdown = ({ targetDate }: SessionCountdownProps) =>
 <div className="sessionCountdown">
-    Event in {getDaysUntilTarget(targetDate)} days, @ <strong><time dateTime={targetDate.toISOString()}>{formatDate(targetDate)}</time></strong>
+    { getDaysUntilTarget(targetDate) >= 0 ? 
+        `Event in ${getDaysUntilTarget(targetDate)} days`
+        :
+        `Event was ${-getDaysUntilTarget(targetDate)} days ago`
+    }
+    , @ <strong><time dateTime={targetDate.toISOString()}>{formatDate(targetDate)}</time></strong>
 </div>;
 
 export default SessionCountdown;
