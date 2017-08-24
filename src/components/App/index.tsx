@@ -11,7 +11,7 @@ const App = () =>
             date={new Date(2017, 7, 29)}
             name="Dungeons and Dragons, Season 2"
             shortDesc="Game run by Luke, next Tuesday in Rome"
-            foodStatus="Contact #pen-and-paper for pizza choices/requests"
+            channelLink="Contact #pen-and-paper for pizza choices/requests"
             color="rgb(193, 253, 215)"
             />
     </CenteringContainer>
