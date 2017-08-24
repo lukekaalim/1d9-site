@@ -12,7 +12,7 @@ const App = () =>
             name="Dungeons and Dragons, Season 2"
             shortDesc="Game run by Luke, next Tuesday in Rome"
             channelLink="Contact #pen-and-paper for pizza choices/requests"
-            color="rgb(193, 253, 215)"
+            color="#B8E986"
             />
     </CenteringContainer>
 </div>;
