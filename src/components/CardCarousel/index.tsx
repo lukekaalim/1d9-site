@@ -9,16 +9,18 @@ const calculateOffset = (index: number): string => `translateX(${-(index * CARD_
 
 const CardCarousel = ({ cards, currentIndex, selectIndex }: CardCarouselProps) => 
 <div className="cardCarousel">
-    {cards.map((card, cardIndex) =>
-        <div
-            className={`cardItem${cardIndex === currentIndex ? ' selected' : ''}`}
-            key={cardIndex}
-            style={{'width': CARD_WIDTH, 'transform': calculateOffset(currentIndex)}}
-            onClick={() => selectIndex(cardIndex)}
-        >
-            {card}
-        </div>
-    )}
+    <span className="carouselSlider" style={{'transform': calculateOffset(currentIndex)}}>
+        {cards.map((card, cardIndex) =>
+            <div
+                className={`cardItem${cardIndex === currentIndex ? ' selected' : ''}`}
+                key={cardIndex}
+                style={{'width': CARD_WIDTH}}
+                onClick={() => selectIndex(cardIndex)}
+            >
+                {card}
+            </div>
+        )}
+    </span>
 </div>;
 
 export default CardCarousel;

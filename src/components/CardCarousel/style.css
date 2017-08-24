@@ -1,14 +1,18 @@
 .cardCarousel {
-    display: flex;
     position: absolute;
-    flex-direction: row;
     left: 50%;
+}
+
+.carouselSlider {
+    flex-direction: row;
+    display: flex;
+    transition: all 0.25s ease;
 }
 
 .cardItem {
     cursor: pointer;
-    transition: all 0.25s ease;
     flex-shrink: 0;
+    transition: all 0.25s ease;
 }
 
 .cardItem .card {
