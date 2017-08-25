@@ -27,8 +27,8 @@ const lastSession = {
 const futureSession = {
     id: 2,
     date: new Date(2017, 8, 4),
-    name: 'Spooky House',
-    shortDesc: 'DM: Matt. He is going to try to kill is all.',
+    name: 'The Haunt',
+    shortDesc: 'DM: Matt.',
     color: '#e56635',
     invert: true,
 }
