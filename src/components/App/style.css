@@ -1,0 +1,21 @@
+.haunted {
+  transition: background-color 25s ease 5s;
+  background-color: black;
+}
+
+.card {
+  transition: filter 1s;
+}
+
+.haunted .card {
+  transition: filter 25s ease 5s;
+  filter: blur(2px);
+}
+
+.haunted .selected .card {
+  filter: blur(0px);
+}
+
+.notHaunted {
+  transition: background-color 1s;
+}
