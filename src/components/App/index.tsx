@@ -5,6 +5,8 @@ import CenteringContainer from '../CenteringContainer';
 import CardCarousel from '../CardCarousel';
 import SessionCard from '../SessionCard';
 
+import Homepage from '../../views/Homepage';
+
 export interface Identifiable { id: number };
 
 const currentSession = {
@@ -96,6 +98,13 @@ const sessions = [
   <div className="card"> More coming Soon... </div>,
 ];
 
+const homepageProps = {
+    sessions,
+    index: 0,
+    users: ['string'],
+    date: new Date(),
+}
+
 export interface State { selectedSession: number }
 
 class App extends React.Component {
@@ -116,12 +125,9 @@ class App extends React.Component {
     render () {
         return <div>
             <Heading />
-            <CenteringContainer className={this.state.selectedSession === 7 ? 'haunted' : 'notHaunted'}>
-                <CardCarousel cards={sessions} currentIndex={this.state.selectedSession} selectIndex={this.selectIndex} />
-            </CenteringContainer>
+            <Homepage  {...homepageProps} />
         </div>;
     }
 }
-
 
 export default App;

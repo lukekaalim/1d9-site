@@ -1,0 +1,14 @@
+{
+    "sessionList": [
+        {
+            "id": 0,
+            "order": 8,
+            "date": "2017-8-29",
+            "name": "The Messenger",
+            "dmId": 0,
+            "shortDesc": "A messenger",
+            "channelLink": "Contact #pen-and-paper for pizza choices/requests",
+            "color": "#fff252"
+        }
+    ]
+}
