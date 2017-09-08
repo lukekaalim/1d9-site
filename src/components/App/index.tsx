@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './style.css';
-import Heading from '../Heading';
-import CenteringContainer from '../CenteringContainer';
-import CardCarousel from '../CardCarousel';
-import SessionCard from '../SessionCard';
+import Heading from 'components/Heading';
+import CenteringContainer from 'components/CenteringContainer';
+import CardCarousel from 'components/CardCarousel';
+import SessionCard from 'components/SessionCard';
 
-import Homepage from '../../views/Homepage';
+import Homepage from 'views/Homepage';
 
 export interface Identifiable { id: number };
 
