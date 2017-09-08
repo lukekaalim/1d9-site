@@ -105,29 +105,15 @@ const homepageProps = {
     date: new Date(),
 }
 
-export interface State { selectedSession: number }
-
-class App extends React.Component {
-    state: State;
-
-    constructor () {
-        super();
-        this.state = {
-            selectedSession: 6,
-        };
-        this.selectIndex = this.selectIndex.bind(this);
-    }
-
-    selectIndex (index: number) {
-        this.setState({ selectedSession: index });
-    }
-
-    render () {
-        return <div>
+const App= () => {
+    console.log(homepageProps);
+    return (
+        <div>
             <Heading />
             <Homepage  {...homepageProps} />
-        </div>;
-    }
+        </div>
+    );
 }
+
 
 export default App;

@@ -20,7 +20,7 @@ export interface HomepageProps {
     theme?: HomepageTheme,
 };
 
-const mapStateToProps = ({ sessions, users, theme, date, index }: HomepageProps) => ({
+const mapStateToProps = ({ homepage: { sessions, users, theme, date, index } }: { homepage: HomepageProps }) => ({
     sessions,
     users,
     theme,
@@ -29,6 +29,7 @@ const mapStateToProps = ({ sessions, users, theme, date, index }: HomepageProps)
 });
 
 const Homepage = ({ sessions, users, theme, date, index }: HomepageProps) => {
+    console.log(sessions);
     return (
         <CenteringContainer>
             <CardCarousel cards={sessions} index={0}/>
