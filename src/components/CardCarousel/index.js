@@ -1,16 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import './style.css';
-
-export interface CardCarouselProps {
-    cards: Array<JSX.Element>,
-    index: number,
-};
 
 const CARD_WIDTH = 350;
 
-const calculateOffset = (index: number): string => `translateX(${-(index * CARD_WIDTH) - (CARD_WIDTH / 2)}px)`;
+const calculateOffset = index => `translateX(${-(index * CARD_WIDTH) - (CARD_WIDTH / 2)}px)`;
 
-const CardCarousel = ({ cards, index }: CardCarouselProps) => 
+const CardCarousel = ({ cards, index }) => 
 <div className="cardCarousel">
     <span className="carouselSlider" style={{'transform': calculateOffset(index)}}>
         {cards.map((card, cardIndex) =>

@@ -1,24 +1,13 @@
-import * as React from 'react';
-import './style.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
+import style from './style.css';
+
+import { startRequest, failRequest, succeedRequest } from 'actions/gameDataActions';
+
 import Heading from 'components/Heading';
-import CenteringContainer from 'components/CenteringContainer';
-import CardCarousel from 'components/CardCarousel';
-import SessionCard from 'components/SessionCard';
 
 import Homepage from 'views/Homepage';
 
-export interface Identifiable { id: number };
-
-const currentSession = {
-    id: 1,
-    date: new Date(2017, 7, 29),
-    name: 'The Messenger',
-    dmName: 'Luke',
-    shortDesc: 'Next Tuesday in Rome. Dungeons and Dragons, Season 2 Pilot',
-    channelLink: 'Contact #pen-and-paper for pizza choices/requests',
-    color: '#fff252',
-    comingUp: true,
-};
 
 const lastSession = {
     id: 0,
@@ -85,7 +74,7 @@ const fifthSession = {
   shortDesc: 'The Party slowly traverses, looting and avoiding traps',
   color: '#b4b6c5',
 }
-
+/*
 const sessions = [
   <SessionCard {...firstSession} />,
   <SessionCard {...secondSession} />,
@@ -97,23 +86,30 @@ const sessions = [
   <SessionCard {...futureSession} />,
   <div className="card"> More coming Soon... </div>,
 ];
+*/
 
-const homepageProps = {
-    sessions,
-    index: 0,
-    users: ['string'],
-    date: new Date(),
-}
+const mapDispatchToProps = dispatch => ({
+    startGameDataRequest: () => dispatch(startRequest()),
+    succeedGameDataRequest: data => dispatch(succeedRequest(data)),
+    failGameDataRequest: error => dispatch(failRequest(error)),
+});
 
-const App= () => {
-    console.log(homepageProps);
-    return (
-        <div>
-            <Heading />
-            <Homepage  {...homepageProps} />
-        </div>
-    );
-}
+class App extends Component {
+    componentDidMount() {
+        const { startGameDataRequest, succeedGameDataRequest, failGameDataRequest } = this.props;
+        startGameDataRequest();
+        fetch('/gameData.json')
+          .then(response => response.json().then(succeedGameDataRequest))
+          .catch(failGameDataRequest);
+    }
 
+    render() {
+        return (
+            <div>
+                <Heading />
+                <Homepage />
+            </div>);
+    }
+};
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);
