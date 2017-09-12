@@ -7,6 +7,7 @@ const sessions = [
 
 const DEFAULT_STATE = {
     sessions,
+    sessionCarouselIndex: 0,
 };
 
 export default function homepageReducer(state = DEFAULT_STATE, action) {

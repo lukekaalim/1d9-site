@@ -11,15 +11,24 @@ const formatDate = date => {
 const SessionCountdown = ({ targetDate }) => {
     const days = getDifferenceInDays(targetDate);
     const parsedDate = new Date(targetDate);
-    console.log(targetDate);
+    let dayText;
+    if(days > 0) {
+        dayText = `Event in ${days} days, `;
+    } else if (days < 0) {
+        dayText = `Event was ${-days} days ago, `;
+    } else {
+        dayText = 'Event is today, ';
+    }
+
+
     return (
         <div className="sessionCountdown">
-            { days >= 0 ? 
-                `Event in ${days} days`
-                :
-                `Event was ${-days} days ago`
-            }
-            , <strong><time dateTime={parsedDate.toISOString()}>{formatDate(parsedDate)}</time></strong>
+            {dayText}
+            <strong>
+                <time dateTime={parsedDate.toISOString()}>
+                    {formatDate(parsedDate)}
+                    </time>
+            </strong>
         </div>
     );
 };
